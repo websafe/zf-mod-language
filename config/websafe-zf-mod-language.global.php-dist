@@ -10,8 +10,6 @@
  * @link      http://github.com/websafe/zf-mod-language GitHub repository
  */
 
-namespace WebsafeZfModLanguage;
-
 $settings = array(
     /*
      * List of locales supported by this the application.
@@ -67,7 +65,7 @@ $settings = array(
      *
      * Default: true
      */
-    'detect_in_session' => true,
+    'detect_in_session' => false,
     /*
      * Name of the session container, that may contain the session variable,
      * that that may contain the current locale ;-)
@@ -87,7 +85,7 @@ $settings = array(
      *
      * Default: true
      */
-    'detect_in_query'   => true,
+    'detect_in_query'   => false,
     /*
      * Name of the query param, that may contain the current locale.
      *
@@ -100,7 +98,7 @@ $settings = array(
      *
      * Default: true
      */
-    'detect_in_route'   => true,
+    'detect_in_route'   => false,
     /*
      * Name of the route param, that may contain the current locale.
      *
@@ -120,48 +118,4 @@ $settings = array(
 return array(
     //
     __NAMESPACE__     => $settings,
-    // Configuration for the logger service, which is instantiated
-    // by `Zend\Log\LoggerServiceFactory`:
-    'log'             => array(
-        'writers' => array(
-            array(
-                'name'     => 'Zend\Log\Writer\Null',
-                'priority' => null,
-                'options'  => array(),
-            ),
-        ),
-    ),
-    'router'       => array(
-        'routes' => array(
-            'websafe-language' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route' => '/language',
-                ),
-                'may_terminate' => false,
-                'child_routes'  => array(
-                    'switch' => array(
-                        'type'          => 'Literal',
-                        'options'       => array(
-                            'route' => '/switch',
-                        ),
-                        'may_terminate' => false,
-                        'child_routes'  => array(
-                            'client-locale' => array(
-                                'type'    => 'Literal',
-                                'options' => array(
-                                    'route'    => '/client-locale',
-                                    'defaults' => array(
-                                        'controller'
-                                            => 'WebsafeZfModLanguageController',
-                                        'action'     => 'switchClientLocale',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    ),
 );
