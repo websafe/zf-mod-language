@@ -46,7 +46,7 @@ class LanguageSelect extends AbstractHelper implements
         $o .= '>';
         $o .= '<div class="form-group">';
         $o .= '<select';
-        //$o .= ' class="form-control"';
+        $o .= ' class="form-control"';
         $o .= ' name="language"';
         $o .= ' onchange="this.form.submit();"';
         $o .= '>';
