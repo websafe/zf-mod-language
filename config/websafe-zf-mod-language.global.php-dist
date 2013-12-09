@@ -5,15 +5,16 @@
  * PHP version >=5.4
  *
  * @author    Thomas Szteliga <ts@websafe.pl>
- * @copyright 2013-2014 WEBSAFE.PL. (https://websafe.pl/)
+ * @copyright 2013-2014 WEBSAFE.PL Thomas Szteliga (https://websafe.pl/)
  * @license   http://websafe.pl/license/mit MIT
  * @link      http://github.com/websafe/zf-mod-language GitHub repository
  */
 
 $settings = array(
     /*
-     * List of locales supported by this the application.
-     * This list is based on language files distributed with the
+     * List of locales supported by the application.
+     * 
+     * The actual list is based on language files distributed with the
      * ZendSkeletonApplication.
      *
      * Default: array of 19 locales
@@ -41,7 +42,7 @@ $settings = array(
     ),
     // -------------------------------------------------------------------------
     /*
-     * Should the language/locale be detected in Accept-Language?
+     * Should the language/locale be detected in Accept-Language headers?
      *
      * Default: true
      */
@@ -54,7 +55,7 @@ $settings = array(
      */
     'detect_in_cookie'  => true,
     /*
-     * Name of the cookie, that may contain the current locale
+     * Name of the cookie, that may contain the current locale.
      *
      * Default: language
      */
@@ -65,7 +66,7 @@ $settings = array(
      *
      * Default: true
      */
-    'detect_in_session' => false,
+    'detect_in_session' => true,
     /*
      * Name of the session container, that may contain the session variable,
      * that that may contain the current locale ;-)
@@ -85,7 +86,7 @@ $settings = array(
      *
      * Default: true
      */
-    'detect_in_query'   => false,
+    'detect_in_query'   => true,
     /*
      * Name of the query param, that may contain the current locale.
      *
@@ -98,7 +99,7 @@ $settings = array(
      *
      * Default: true
      */
-    'detect_in_route'   => false,
+    'detect_in_route'   => true,
     /*
      * Name of the route param, that may contain the current locale.
      *

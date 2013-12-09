@@ -5,7 +5,7 @@
  * PHP version >=5.4
  *
  * @author    Thomas Szteliga <ts@websafe.pl>
- * @copyright 2013-2014 WEBSAFE.PL. (https://websafe.pl/)
+ * @copyright 2013-2014 WEBSAFE.PL Thomas Szteliga (https://websafe.pl/)
  * @license   http://websafe.pl/license/mit MIT
  * @link      http://github.com/websafe/zf-mod-language GitHub repository
  */

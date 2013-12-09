@@ -5,7 +5,7 @@
  * PHP version >=5.4
  *
  * @author    Thomas Szteliga <ts@websafe.pl>
- * @copyright 2013-2014 WEBSAFE.PL. (https://websafe.pl/)
+ * @copyright 2013-2014 WEBSAFE.PL Thomas Szteliga (https://websafe.pl/)
  * @license   http://websafe.pl/license/mit MIT
  * @link      http://github.com/websafe/zf-mod-language GitHub repository
  */
@@ -14,8 +14,9 @@ namespace WebsafeZfModLanguage;
 
 $settings = array(
     /*
-     * List of locales supported by this the application.
-     * This list is based on language files distributed with the
+     * List of locales supported by the application.
+     * 
+     * The actual list is based on language files distributed with the
      * ZendSkeletonApplication.
      *
      * Default: array of 19 locales
@@ -43,7 +44,7 @@ $settings = array(
     ),
     // -------------------------------------------------------------------------
     /*
-     * Should the language/locale be detected in Accept-Language?
+     * Should the language/locale be detected in Accept-Language headers?
      *
      * Default: true
      */
@@ -56,7 +57,7 @@ $settings = array(
      */
     'detect_in_cookie'  => true,
     /*
-     * Name of the cookie, that may contain the current locale
+     * Name of the cookie, that may contain the current locale.
      *
      * Default: language
      */
