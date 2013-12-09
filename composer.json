@@ -1,0 +1,25 @@
+{
+    "name": "websafe/zf-mod-language",
+    "description": "A ZF2 module which takes care of detecting a default or the requested locale for Your application's translator. The locale is computed/detected basing on: Accept-Language, cookie, session, query parameter, route parameter. Each detection method can be disabled/enabled via configuration.",
+    "license": "MIT",
+    "keywords": [
+        "websafe", "zf2", "module", "language", "translator", "locale",
+        "detecting"
+    ],
+    "homepage": "http://github.com/websafe/zf-mod-language",
+    "authors": [
+        {
+            "name": "Thomas Szteliga",
+            "email": "ts@websafe.pl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework": "2.2.*"
+    },
+    "require-dev": {
+        "fabpot/php-cs-fixer": "*",
+        "squizlabs/php_codesniffer": "*"
+    }
+}
