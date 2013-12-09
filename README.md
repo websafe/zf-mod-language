@@ -2,32 +2,51 @@ WebsafeZfModLanguage
 ================================================================================
 
 A ZF2 module which takes care of detecting **a default** or **the requested** 
-locale for Your application's translator.
-
-The locale is computed/detected basing on:
-
- + Accept-Language,
- + cookie,
- + session,
- + query parameter,
- + route parameter.
-
-Each detection method can be disabled/enabled via configuration.
-
-Utilizes an Event Listener to hook the detection process into 
-MvcEvent::EVENT_DISPATCH.
-
-Comes with a `Controller` for handling locale switching by client.
-
+locale for Your application's translator. The locale is computed/detected 
+basing on values found in: Accept-Language header, cookie, session, query 
+parameter and route parameter. Each detection method can be disabled/enabled 
+via configuration.
 
 Provides:
 
- + The language service [WebsafeZfModLanguageService] accessible 
-   via ServiceManager.
+ + The language service accessible via ServiceManager.
+   See: [WebsafeZfModLanguageService] and [WebsafeZfModLanguageServiceFactory].
 
  + A Controller for handling client requests (switching locale/language).
+   See: [WebsafeZfModLanguageController].
    
  + View Helpers for showing language selecting menus/dropdowns etc.
+
+
+
+Using WebsafeZfModLanguage in Your application
+--------------------------------------------------------------------------------
+
+In project's root run:
+
+~~~~ bash
+vendor/bin/composer.phar require "websafe/zf-mod-language:*"
+~~~~
+
+
+In `config/application.config.php` add `WebsafeZfModLanguage`:
+
+~~~~ php
+    // ...
+    'modules' => array(
+        // ...
+        'Application',
+        'WebsafeZfModLanguage',
+        // ...
+    ),
+~~~~
+
+
+That's all. The module should work now - transparently. Just test it on the 
+official [ZendSkeletonApplication] and try to modify browsers Accept-Language
+headers.
+
+
 
 
 Configuration
@@ -77,3 +96,10 @@ How locale/language detection is handled.
     1. The language service applies the current locale to the `translator`
        service.
 
+
+
+[DetectLanguagesListener]: /blob/develop/src/WebsafeZfModLanguage/EventManager/DetectLanguagesListener.php
+[WebsafeZfModLanguageService]: /blob/develop/src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageService.php
+[WebsafeZfModLanguageServiceFactory]: /blob/develop/src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageServiceFactory.php
+[WebsafeZfModLanguageController]: /blob/develop/src/WebsafeZfModLanguage/Controller/WebsafeZfModLanguageController.php
+[ZendSkeletonApplication]: https://github.com/zendframework/ZendSkeletonApplication
