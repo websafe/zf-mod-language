@@ -98,8 +98,10 @@ How locale/language detection is handled.
 
 
 
-[DetectLanguagesListener]: /blob/develop/src/WebsafeZfModLanguage/EventManager/DetectLanguagesListener.php
-[WebsafeZfModLanguageService]: /blob/develop/src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageService.php
-[WebsafeZfModLanguageServiceFactory]: /blob/develop/src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageServiceFactory.php
-[WebsafeZfModLanguageController]: /blob/develop/src/WebsafeZfModLanguage/Controller/WebsafeZfModLanguageController.php
+[DetectLanguagesListener]: src/WebsafeZfModLanguage/EventManager/DetectLanguagesListener.php
+[WebsafeZfModLanguageService]: src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageService.php
+[WebsafeZfModLanguageServiceFactory]: src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageServiceFactory.php
+[WebsafeZfModLanguageController]: src/WebsafeZfModLanguage/Controller/WebsafeZfModLanguageController.php
 [ZendSkeletonApplication]: https://github.com/zendframework/ZendSkeletonApplication
+
+
