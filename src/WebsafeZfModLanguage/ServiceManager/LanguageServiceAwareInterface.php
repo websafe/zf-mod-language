@@ -6,7 +6,7 @@
  *
  * @author    Thomas Szteliga <ts@websafe.pl>
  * @copyright 2013-2014 WEBSAFE.PL. (https://websafe.pl/)
- * @license   http://websafe.pl/license/bsd-3-clause BSD-3-Clause
+ * @license   http://websafe.pl/license/mit MIT
  * @link      http://github.com/websafe/zf-mod-language GitHub repository
  */
 
