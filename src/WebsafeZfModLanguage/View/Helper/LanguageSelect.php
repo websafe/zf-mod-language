@@ -44,7 +44,7 @@ class LanguageSelect extends AbstractHelper implements
         $o .= $this->view->url('websafe-language/switch/client-locale');
         $o .= '"';
         $o .= '>';
-        $o .= '<input type="hidden" name="route" value="';
+        $o .= '<input type="hidden" name="route_name" value="';
         $o .= $languageService->getRouteMatch()->getMatchedRouteName();
         $o .= '" />';
         $o .= '<input type="hidden" name="route_params" value="';

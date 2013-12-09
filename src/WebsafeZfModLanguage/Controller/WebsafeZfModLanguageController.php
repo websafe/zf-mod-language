@@ -31,8 +31,9 @@ class WebsafeZfModLanguageController extends AbstractActionController implements
     {
         //
         $languageService = $this->getLanguageService();
-        $languageService->getRouteMatch();
-        die();
+        //$routeName = $languageService->getRouteMatch()->getMatchedRouteName();
+        //$routeParams = $languageService->getRouteMatch()->getParams();
+        $routeName = 'home';
         //
         if ($this->getRequest()->isPost()) {
             $postData = $this->getRequest()->getPost();
@@ -40,8 +41,17 @@ class WebsafeZfModLanguageController extends AbstractActionController implements
             if (array_key_exists('language', $postData)) {
                 $languageService->switchClientLocale($postData['language']);
             }
+            if(array_key_exists('route_name', $postData))
+            {
+                $routeName = $postData['route_name'];
+            }
+            if(array_key_exists('route_params', $postData))
+            {
+                $routeParamsSerialized = $postData['route_params'];
+                $routeParams = unserialize($routeParamsSerialized);
+            }
         }
         // @fixme: make redirect configurable
-        $this->redirect()->toRoute('home');
+        $this->redirect()->toRoute($routeName, $routeParams);
     }
 }
