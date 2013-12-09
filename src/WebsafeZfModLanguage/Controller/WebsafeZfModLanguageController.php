@@ -41,12 +41,10 @@ class WebsafeZfModLanguageController extends AbstractActionController implements
             if (array_key_exists('language', $postData)) {
                 $languageService->switchClientLocale($postData['language']);
             }
-            if(array_key_exists('route_name', $postData))
-            {
+            if (array_key_exists('route_name', $postData)) {
                 $routeName = $postData['route_name'];
             }
-            if(array_key_exists('route_params', $postData))
-            {
+            if (array_key_exists('route_params', $postData)) {
                 $routeParamsSerialized = $postData['route_params'];
                 $routeParams = unserialize($routeParamsSerialized);
             }

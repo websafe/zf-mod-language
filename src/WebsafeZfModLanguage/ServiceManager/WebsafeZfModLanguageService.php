@@ -313,7 +313,7 @@ class WebsafeZfModLanguageService implements
         return $language;
     }
     /**
-     * 
+     *
      * @return RouteMatch
      */
     public function getRouteMatch()
