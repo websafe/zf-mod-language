@@ -52,21 +52,10 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
     {
         return array(
             'factories' => array(
-                'WebsafeZfModLanguage\Log' => 'Zend\Log\LoggerServiceFactory',
+                'WebsafeZfModLanguageLogger' => 'Zend\Log\LoggerServiceFactory',
                 'WebsafeZfModLanguageService'
                     => 'WebsafeZfModLanguage\ServiceManager'
                      . '\WebsafeZfModLanguageServiceFactory',
-            ),
-            'initializers' => array(
-                function ($instance, ServiceManager $sm) {
-                    // LoggerAwareInterface
-                    if ($instance instanceof LoggerAwareInterface) {
-                        if ($sm->has('WebsafeZfModLanguage\Log')) {
-                            $logger = $sm->get('WebsafeZfModLanguage\Log');
-                        }
-                        $instance->setLogger($logger);
-                    }
-                }
             ),
         );
     }
@@ -91,8 +80,8 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
                     }
                     // LoggerAwareInterface
                     if ($instance instanceof LoggerAwareInterface) {
-                        if ($sm->has('WebsafeZfModLanguage\Log')) {
-                            $logger = $sm->get('WebsafeZfModLanguage\Log');
+                        if ($sm->has('WebsafeZfModLanguageLogger')) {
+                            $logger = $sm->get('WebsafeZfModLanguageLogger');
                         }
                         $instance->setLogger($logger);
                     }

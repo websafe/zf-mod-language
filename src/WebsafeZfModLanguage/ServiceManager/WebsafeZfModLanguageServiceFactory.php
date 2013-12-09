@@ -15,6 +15,8 @@ namespace WebsafeZfModLanguage\ServiceManager;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use WebsafeZfModLanguage\ServiceManager\WebsafeZfModLanguageService;
+use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Zend\Log\LoggerAwareInterface;
 
 class WebsafeZfModLanguageServiceFactory implements FactoryInterface
 {
@@ -26,8 +28,16 @@ class WebsafeZfModLanguageServiceFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $service = new WebsafeZfModLanguageService();
-        $service->setServiceLocator($serviceLocator);
-
+        //
+        if ($service instanceof ServiceLocatorAwareInterface) {
+            $service->setServiceLocator($serviceLocator);
+        }
+        //
+        if ($service instanceof LoggerAwareInterface) {
+            $logger = $serviceLocator->get('WebsafeZfModLanguageLogger');
+            $service->setLogger($logger);
+        }
+        //
         return $service;
     }
 }

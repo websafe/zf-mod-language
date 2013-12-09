@@ -12,24 +12,24 @@
 
 namespace WebsafeZfModLanguage\ServiceManager;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Session\Container;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorAwareTrait;
 use Zend\Log\LoggerAwareInterface;
-use Zend\Log\LoggerAwareTrait;
-use Zend\Http\Header\SetCookie;
-use Zend\Http\Header\Cookie;
-use Locale;
 use WebsafeZfModLanguage\ServiceManager\LanguageServiceInterface;
+use Zend\ServiceManager\ServiceLocatorAwareTrait;
+use Zend\Log\LoggerAwareTrait;
+use Zend\Mvc\MvcEvent;
+use Zend\Http\Header\Cookie;
+use Zend\Session\Container;
+use Zend\Http\Header\SetCookie;
+use Locale;
 
 class WebsafeZfModLanguageService implements ServiceLocatorAwareInterface,
     LoggerAwareInterface, LanguageServiceInterface
 {
 
     use ServiceLocatorAwareTrait;
+    use LoggerAwareTrait;
 
-use LoggerAwareTrait;
     /**
      *
      * @var array
