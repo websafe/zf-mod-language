@@ -289,7 +289,8 @@ class WebsafeZfModLanguageService implements
         $cookie   = new SetCookie(
             'language',
             $locale,
-            time() + 365 * 60 * 60 * 24
+            time() + 365 * 60 * 60 * 24,
+            '/'
         );
         $headers->addHeader($cookie);
     }
