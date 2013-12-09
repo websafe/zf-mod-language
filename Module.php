@@ -27,8 +27,11 @@ use Zend\ModuleManager\Feature\ServiceProviderInterface;
 /**
  *
  */
-class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
-    ViewHelperProviderInterface, ServiceProviderInterface,
+class Module implements
+    AutoloaderProviderInterface,
+    ConfigProviderInterface,
+    ViewHelperProviderInterface,
+    ServiceProviderInterface,
     ControllerProviderInterface
 {
     /**
@@ -71,7 +74,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
                      . '\WebsafeZfModLanguageController',
             ),
             'initializers' => array(
-                function($instance, ServiceLocatorInterface $serviceLocator) {
+                function ($instance, ServiceLocatorInterface $serviceLocator) {
                     $sm = $serviceLocator->getServiceLocator();
                     // LanguageServiceAwareInterface
                     if ($instance instanceof LanguageServiceAwareInterface) {
@@ -100,7 +103,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
                     => 'WebsafeZfModLanguage\View\Helper\LanguageSelect',
             ),
             'initializers' => array(
-                function($instance, ServiceLocatorInterface $serviceLocator) {
+                function ($instance, ServiceLocatorInterface $serviceLocator) {
                     $sm = $serviceLocator->getServiceLocator();
                     if ($instance instanceof LanguageServiceAwareInterface) {
                         $service = $sm->get('WebsafeZfModLanguageService');

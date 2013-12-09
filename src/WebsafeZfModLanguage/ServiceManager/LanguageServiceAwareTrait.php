@@ -28,8 +28,7 @@ trait LanguageServiceAwareTrait
      */
     public function setLanguageService(
         LanguageServiceInterface $languageService
-    )
-    {
+    ) {
         $this->languageService = $languageService;
 
         return $this;

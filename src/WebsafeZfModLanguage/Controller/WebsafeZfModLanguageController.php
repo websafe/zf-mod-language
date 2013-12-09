@@ -19,8 +19,8 @@ use WebsafeZfModLanguage\ServiceManager\LanguageServiceAwareTrait;
 /**
  * The main controller of the WebsafeZfModLanguage module.
  */
-class WebsafeZfModLanguageController extends AbstractActionController
-    implements LanguageServiceAwareInterface
+class WebsafeZfModLanguageController extends AbstractActionController implements
+    LanguageServiceAwareInterface
 {
 
     use LanguageServiceAwareTrait;

@@ -20,8 +20,8 @@ use Locale;
 /**
  * LanguageSelect view helper.
  */
-class LanguageSelect extends AbstractHelper
-    implements LanguageServiceAwareInterface
+class LanguageSelect extends AbstractHelper implements
+    LanguageServiceAwareInterface
 {
 
     use LanguageServiceAwareTrait;

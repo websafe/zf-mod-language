@@ -31,7 +31,9 @@ class DetectLanguagesListener implements ListenerAggregateInterface
     public function attach(EventManagerInterface $events)
     {
         $this->listeners[] = $events->attach(
-            MvcEvent::EVENT_DISPATCH, array($this, 'onDispatch'), 100
+            MvcEvent::EVENT_DISPATCH,
+            array($this, 'onDispatch'),
+            100
         );
     }
     /**

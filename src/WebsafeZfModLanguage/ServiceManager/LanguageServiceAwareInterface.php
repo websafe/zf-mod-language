@@ -22,7 +22,8 @@ interface LanguageServiceAwareInterface
      * @param LanguageServiceInterface $languageService
      */
     public function setLanguageService(
-        LanguageServiceInterface $languageService);
+        LanguageServiceInterface $languageService
+    );
     /**
      * Get language service
      *

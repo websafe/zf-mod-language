@@ -23,8 +23,10 @@ use Zend\Session\Container;
 use Zend\Http\Header\SetCookie;
 use Locale;
 
-class WebsafeZfModLanguageService implements ServiceLocatorAwareInterface,
-    LoggerAwareInterface, LanguageServiceInterface
+class WebsafeZfModLanguageService implements
+    ServiceLocatorAwareInterface,
+    LoggerAwareInterface,
+    LanguageServiceInterface
 {
 
     use ServiceLocatorAwareTrait;
@@ -199,7 +201,8 @@ class WebsafeZfModLanguageService implements ServiceLocatorAwareInterface,
             // $matchedLocale will contain an empty string if current
             // $language did not match any locale in $supportedLocales.
             $matchedLocale = \Locale::lookup(
-                $this->cfg['supported_locales'], $language
+                $this->cfg['supported_locales'],
+                $language
             );
             // Found match:
             if (!empty($matchedLocale)) {
@@ -282,9 +285,12 @@ class WebsafeZfModLanguageService implements ServiceLocatorAwareInterface,
         $sl       = $this->getServiceLocator();
         $response = $sl->get('Response');
         $headers  = $response->getHeaders();
+        // @fixme: make cookie configurable
         $cookie   = new SetCookie(
-            'language', $locale, time() + 365 * 60 * 60 * 24, '/'
-        ); // now + 1 year
+            'language',
+            $locale,
+            time() + 365 * 60 * 60 * 24
+        );
         $headers->addHeader($cookie);
     }
     public function getCurrentLanguage()
