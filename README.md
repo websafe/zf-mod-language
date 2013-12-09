@@ -1,11 +1,11 @@
 WebsafeZfModLanguage
 ================================================================================
 
-A ZF2 module which takes care of detecting **a default** or **the requested** 
-locale for Your application's translator. The locale is computed/detected 
-basing on values found in: Accept-Language header, cookie, session, query 
-parameter and route parameter. Each detection method can be disabled/enabled 
-via configuration.
+A ZF2 module which takes care of detecting **an optimal** and/or 
+**the requested** locale for Your application's translator. The locale is 
+computed/detected basing on values found in: Accept-Language header, cookie, 
+session, query parameter and route parameter. Each detection method can be
+disabled/enabled via configuration.
 
 Provides:
 
@@ -46,6 +46,13 @@ That's all. The module should work now - transparently. Just test it on the
 official [ZendSkeletonApplication] and try to modify browsers Accept-Language
 headers.
 
+But, there's already a basic view helper included, so after enabling the 
+module in `config/application.config.php` You can try to add the following 
+code somewhere in `layout.phtml`:
+
+~~~~ php
+<?php echo $this->languageSelect();?>
+~~~~
 
 
 
@@ -98,10 +105,9 @@ How locale/language detection is handled.
 
 
 
+
 [DetectLanguagesListener]: src/WebsafeZfModLanguage/EventManager/DetectLanguagesListener.php
 [WebsafeZfModLanguageService]: src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageService.php
 [WebsafeZfModLanguageServiceFactory]: src/WebsafeZfModLanguage/ServiceManager/WebsafeZfModLanguageServiceFactory.php
 [WebsafeZfModLanguageController]: src/WebsafeZfModLanguage/Controller/WebsafeZfModLanguageController.php
 [ZendSkeletonApplication]: https://github.com/zendframework/ZendSkeletonApplication
-
-
