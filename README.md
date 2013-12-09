@@ -1,9 +1,9 @@
 WebsafeZfModLanguage
 ================================================================================
 
-A ZF2 module which takes care of detecting **an optimal** and/or 
+A ZF2 module which takes care of detecting **an optimal** and|or 
 **the requested** locale for Your application's translator. The locale is 
-computed/detected basing on values found in: Accept-Language header, cookie, 
+computed/detected basing on values found in: Accept-Language headers, cookie, 
 session, query parameter and route parameter. Each detection method can be
 disabled/enabled via configuration.
 
@@ -42,17 +42,24 @@ In `config/application.config.php` add `WebsafeZfModLanguage`:
 ~~~~
 
 
-That's all. The module should work now - transparently. Just test it on the 
+That's all. The module should work now - transparently. Test it on the 
 official [ZendSkeletonApplication] and try to modify browsers Accept-Language
-headers.
+headers or just add `?language=ja_JP` (or any other locale available in
+`supported_locales`) in the url.
 
-But, there's already a basic view helper included, so after enabling the 
+You should notice a language change, because the default configuration 
+tells the language service to detect the locale in the query too,
+see options `detect_in_query` and `query_param`.
+
+There's already a basic view helper included, so after enabling the 
 module in `config/application.config.php` You can try to add the following 
-code somewhere in `layout.phtml`:
+code somewhere in `layout.phtml` or in other view scripts:
 
 ~~~~ php
 <?php echo $this->languageSelect();?>
 ~~~~
+
+The view helper is currently the only reason for the Controller to exist.
 
 
 
