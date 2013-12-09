@@ -15,7 +15,7 @@ namespace WebsafeZfModLanguage;
 $settings = array(
     /*
      * List of locales supported by the application.
-     * 
+     *
      * The actual list is based on language files distributed with the
      * ZendSkeletonApplication.
      *
