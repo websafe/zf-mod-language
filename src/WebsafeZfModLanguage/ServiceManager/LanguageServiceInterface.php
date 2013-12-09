@@ -12,11 +12,17 @@
 
 namespace WebsafeZfModLanguage\ServiceManager;
 
+use Zend\Mvc\Router\RouteMatch;
+
 /**
  * Language service interface
  */
 interface LanguageServiceInterface
 {
+    /**
+     * @return RouteMatch
+     */
+    public function getRouteMatch();
     /**
      *
      */

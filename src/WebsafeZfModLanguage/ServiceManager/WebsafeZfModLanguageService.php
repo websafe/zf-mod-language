@@ -22,6 +22,7 @@ use Zend\Http\Header\Cookie;
 use Zend\Session\Container;
 use Zend\Http\Header\SetCookie;
 use Locale;
+use Zend\Mvc\Router\RouteMatch;
 
 class WebsafeZfModLanguageService implements
     ServiceLocatorAwareInterface,
@@ -47,6 +48,11 @@ class WebsafeZfModLanguageService implements
      * @var string
      */
     protected $locale;
+    /**
+     *
+     * @var RouteMatch
+     */
+    protected $routeMatch;
     // -------------------------------------------------------------------------
     /**
      *
@@ -242,6 +248,7 @@ class WebsafeZfModLanguageService implements
         if (array_key_exists('WebsafeZfModLanguage', $appConfig)) {
             $this->cfg = array_merge($appConfig['WebsafeZfModLanguage']);
         }
+        $this->routeMatch = $e->getRouteMatch();
         //
         $this
             ->detectLanguages($e)
@@ -304,5 +311,13 @@ class WebsafeZfModLanguageService implements
         }
 
         return $language;
+    }
+    /**
+     * 
+     * @return RouteMatch
+     */
+    public function getRouteMatch()
+    {
+        return $this->routeMatch;
     }
 }

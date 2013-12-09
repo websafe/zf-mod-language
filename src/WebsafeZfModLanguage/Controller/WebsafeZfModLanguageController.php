@@ -31,6 +31,8 @@ class WebsafeZfModLanguageController extends AbstractActionController implements
     {
         //
         $languageService = $this->getLanguageService();
+        $languageService->getRouteMatch();
+        die();
         //
         if ($this->getRequest()->isPost()) {
             $postData = $this->getRequest()->getPost();
