@@ -42,7 +42,7 @@ $settings = array(
         'zh_TW',
     ),
     // -------------------------------------------------------------------------
-    /**
+    /*
      * Should the language/locale be detected in Accept-Language?
      *
      * Default: true
