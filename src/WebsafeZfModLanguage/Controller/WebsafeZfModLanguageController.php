@@ -30,8 +30,6 @@ class WebsafeZfModLanguageController extends AbstractActionController
     public function switchClientLocaleAction()
     {
         //
-        $sl              = $this->getServiceLocator();
-        //
         $languageService = $this->getLanguageService();
         //
         if ($this->getRequest()->isPost()) {
